@@ -24,4 +24,8 @@ public class Task {
 
     @Column(nullable = true)
     private LocalDateTime finishedAt = null;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
