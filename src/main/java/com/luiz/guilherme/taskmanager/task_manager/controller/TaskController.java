@@ -36,7 +36,7 @@ public class TaskController {
     }
 
     @DeleteMapping("{id}/user/{username}")
-    public ResponseEntity<Void> delte(@PathVariable Long id, @PathVariable String username) {
+    public ResponseEntity<Void> delete(@PathVariable Long id, @PathVariable String username) {
         User user = userService.findByUsername(username);
         taskService.delete(id, user);
 
