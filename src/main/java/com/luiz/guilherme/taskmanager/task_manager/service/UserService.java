@@ -18,6 +18,14 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public void deleteSelf(Long id, User userLogado) {
+       if(!id.equals(userLogado.getId())) {
+           throw new RuntimeException("Acesso negado: Você não pode deletar uma conta pretencente a outro usuário!");
+       }
+
+       userRepository.delete(userLogado);
+    }
+
     public User findByUsername(String username) {
 
         return userRepository.findByUsername(username)
