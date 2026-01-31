@@ -19,7 +19,7 @@ public class UserController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> delte(@PathVariable Long id, @RequestParam String myUsername) {
+    public ResponseEntity<Void> delete(@PathVariable Long id, @RequestParam String myUsername) {
         User userLogado = userService.findByUsername(myUsername);
         userService.deleteSelf(id, userLogado);
 
